@@ -1,8 +1,11 @@
 # ⚽ Halı Saha Rezervasyon Sistemi | Çoklu Saha Yönetim Platformu
 
-Bu proje, berber randevu sisteminin kapsamlı bir şekilde halı saha rezervasyon sistemine dönüştürülmesiyle oluşturulmuş modern bir platformdur. Saha sahiplerinin sahalarını yönetebildiği, oyuncuların ise şehir ve konuma göre saha arayıp saatlik rezervasyon yapabildiği bir ekosistem sunar.
+> [!IMPORTANT]
+> **PROTOTİP AŞAMASI:** Bu proje şu anda bir prototip aşamasındadır ve temel özellikleri sergilemek amacıyla geliştirilmiştir. Aktif olarak geliştirilmeye ve yeni özellikler eklenmeye müsaittir.
 
-## 🌟 Özellikler
+Bu proje, halı saha rezervasyon sistemi olan modern bir platformdur. Saha sahiplerinin sahalarını yönetebildiği, oyuncuların ise şehir ve konuma göre saha arayıp saatlik rezervasyon yapabildiği bir ekosistem sunar.
+
+## 🌟 Özellikler (Temel Prototip)
 
 ### 👤 Kullanıcı (Oyuncu) Özellikleri
 - **Üyelik & Giriş**: Güvenli kimlik doğrulama sistemi.
@@ -15,58 +18,55 @@ Bu proje, berber randevu sisteminin kapsamlı bir şekilde halı saha rezervasyo
 - **Özellik Yönetimi**: Açık/Kapalı, Işıklı, Suni Çim, Tribün gibi özellikleri belirtme.
 - **Fiyatlandırma**: Hafta içi, hafta sonu ve gece tarifesi belirleme.
 - **Rezervasyon Kontrolü**: Gelen talepleri onaylama veya reddetme.
-- **Finansal Takip**: Günlük ve aylık kazanç istatistikleri.
 
 ### 🛠️ Admin Paneli
 - **Genel Denetim**: Tüm sahaları ve kullanıcıları yönetme.
 - **Saha Onayı**: Yeni eklenen sahaları sisteme dahil etmeden önce doğrulama.
-- **Sistem İstatistikleri**: Genel doluluk ve platform geliri takibi.
 
 ## 🚀 Kullanılan Teknolojiler
 
-- **Frontend**: React, TypeScript, TailwindCSS, Lucide React (İkonlar).
-- **Backend**: Node.js (Vercel Serverless Functions), Mongoose.
+- **Frontend**: React, TypeScript, Vite, TailwindCSS, Lucide React (İkonlar).
+- **Backend**: Node.js (Vercel Serverless Functions compatible), Express, Mongoose.
 - **Veritabanı**: MongoDB.
-- **Tasarım**: Shadcn UI bileşenleri temel alınarak oluşturulan modern futbol teması.
+- **Tasarım**: Modern futbol teması ve Shadcn UI bileşenleri.
 
-## 💻 Kurulum
+## �️ Kurulum ve Geliştirme
 
-1. Projeyi klonlayın:
-   ```bash
-   git clone https://github.com/yturu/hali-saha-rezervasyon.git
-   ```
-2. Bağımlılıkları yükleyin:
+1. Projeyi klonlayın ve bağımlılıkları yükleyin:
    ```bash
    npm install
    ```
-3. `.env` dosyasını oluşturun ve MongoDB bağlantı adresinizi ekleyin:
+2. `.env.local` dosyasını oluşturun:
    ```env
-   MONGODB_URI=mongodb+srv://...
+   MONGODB_URI=mongodb://hali-saha
    JWT_SECRET=supersecretkey
    ```
-4. Uygulamayı başlatın:
-   ```bash
-   npm run dev
-   ```
+3. Frontend ve Backend'i başlatın:
+   - **Frontend:** `npm run dev` (8080 portu)
+   - **Backend:** `npm run server` (3000 portu)
 
-## 📊 Veritabanı Şeması
+4. Admin oluşturmak için: `npm run create-admin`
 
-### `User`
-- `email`, `password_hash`, `role` (user, admin, field_owner), `metadata`.
+## �️ Gelecek Yol Haritası (Geliştirme Planı)
 
-### `Field`
-- `owner_id`, `name`, `city`, `district`, `features`, `pricing`, `time_slots`, `status`.
+- [ ] **Ödeme Entegrasyonu**: Rezervasyon sırasında kredi kartı ile ödeme.
+- [ ] **Takım Kurma & Rakip Bulma**: Oyuncuların maçlara katılması için sosyal özellikler.
+- [ ] **Sms/E-posta Bildirimleri**: Rezervasyon onaylandığında otomatik bilgilendirme.
+- [ ] **Canlı Skor & Maç Sonuçları**: Yapılan maçların kayıt altına alınması.
+- [ ] **Mobil Uygulama**: React Native veya PWA desteği ile mobil erişim.
 
-### `Reservation`
-- `field_id`, `user_id`, `ad`, `soyad`, `telefon`, `tarih`, `saat`, `fiyat`, `durum`.
+## 🏗️ Teknik Notlar (Geliştiriciler İçin)
+
+- Backend yapısı hem Vercel Serverless hem de lokal Express sunucusu (`server.js`) ile uyumludur.
+- Veritabanı modeli genişletilebilir şekilde tasarlanmıştır. `api/models` altından şemaları inceleyebilirsiniz.
 
 ## 🤝 Katkı Sağlama
 
-Pull request göndererek sisteme katkıda bulunabilirsiniz. Büyük değişiklikler için önce bir konu (issue) açmanızı rica ederiz.
+Bu proje geliştirilmeye açık bir prototiptir. Pull request göndererek veya fikirlerinizi issue açarak paylaşarak sisteme katkıda bulunabilirsiniz.
 
 ## 📄 Lisans
 
 Bu proje MIT lisansı ile lisanslanmıştır.
 
 ---
-*Geliştiren: [Yunus Turu](https://github.com/yturu)*
+*Geliştiren: [Wopex](https://github.com/Wopex244)*
